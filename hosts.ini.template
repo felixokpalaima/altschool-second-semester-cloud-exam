@@ -1,0 +1,2 @@
+[master]
+master ansible_ssh_host={{ master_ip }} ansible_ssh_user=vagrant ansible_ssh_private_key_file=/vagrant/.vagrant/machines/master/vmware_desktop/private_key

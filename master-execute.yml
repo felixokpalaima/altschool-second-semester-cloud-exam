@@ -1,0 +1,15 @@
+---
+- hosts: master
+  tasks:
+    - name: Execute bash lamp-stack-provision on Master
+      command: /home/vagrant/lamp-stack-provision.sh
+
+    - name: Execute apache-setup on Master
+      command: /home/vagrant/apache-setup.sh
+
+    - name: Setup a cron job to check server's uptime every 12am
+      cron:
+        name: "Check uptime"
+        minute: "0"
+        hour: "0"
+        job: "/usr/bin/uptime >> /home/vagrant/uptime.log"
